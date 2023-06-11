@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Tab</title>
+    <style>
+      /* Custom styles for the home tab */
+      /* Add your own styles here */
+
+      /* Example card styles */
+      body {
+        background-image: url('file:///android_asset/corwin-prescott-1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: auto;
+      }
+      .card {
+        background-color: rgba(191, 223, 255, 0.301);
+        border-radius: 20px;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 16px;
+        min-height: initial;
+        backdrop-filter: blur(23px);
+        flex: 1 1 0%;
+        z-index: 10;
+        grid-template-columns: repeat(4, 86px);
+      }
+
+      .card-title {
+        font-size: 30px !important;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color : #1F0A33;
+        font-weight: 800;
+        letter-spacing: 0.35;
+      }
+
+      .card-text {
+        color: #fff;
+        margin-bottom: 8px;
+      }
+
+      .time-text {
+        font-size: 20px !important;
+        color: #fff;
+        margin-bottom: 8px;
+        font-family: Poppins;
+      }
+
+      .time-mono {
+        font-size: 78px !important;
+        color: var(--override-readability-color, #ffffff);
+        font-weight: 500;
+        margin-bottom: 8px;
+        font-family: Poppins;
+        display: inline-flex;
+        line-height: 1;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+        align: center;
+        -webkit-font-smoothing: antialiased;
+        font-family: Poppins, sans-serif;
+      }
+
+      .card-date {
+        font-size: 30px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p class="time-mono"><span id="currentTime"></span></p>
+    </div>
+
+    <div id="timeDateContainer">
+      <div class="card">
+        <h3 class="card-title">Date</h3>
+        <p class="time-text">Current date: <span id="currentDate"></span></p>
+      </div>
+    </div>
+
+    <div id="searchContainer">
+      <!-- Search bar or search input field goes here -->
+    </div>
+
+    <div id="recentSearchesContainer">
+      <div class="card">
+        <h3 class="card-title">Recently Visited Pages</h3>
+        <p class="card-text">Page 1 description</p>
+        <p class="card-date">June 10, 2023</p>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Recently Visited Pages</h3>
+        <p class="card-text">Page 2 description</p>
+        <p class="card-date">June 9, 2023</p>
+      </div>
+
+      <!-- Add more cards for recently visited pages -->
+    </div>
+
+    <div id="advertisingContainer">
+      <!-- Advertising cards go here -->
+    </div>
+
+    <script>
+      // JavaScript code for interacting with the home tab
+      // Add your own JavaScript code here
+
+      // Set the background color based on the system theme
+      function setSystemThemeBackground() {
+        const darkModeMediaQuery = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        );
+        if (darkModeMediaQuery.matches) {
+          document.body.style.backgroundColor = "#000000";
+        } else {
+          document.body.style.backgroundColor = "#ffffff";
+        }
+      }
+
+      // Get current time and update the #currentTime element
+      function updateTime() {
+        var currentTime = new Date().toLocaleTimeString();
+        document.getElementById("currentTime").textContent = currentTime;
+      }
+
+      // Get current date and update the #currentDate element
+      function updateDate() {
+        var currentDate = new Date().toLocaleDateString();
+        document.getElementById("currentDate").textContent = currentDate;
+      }
+
+      // Update time and date every second
+      setInterval(updateTime, 1000);
+      updateDate();
+      setSystemThemeBackground();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="search_engine">
+        <item>Brave</item>
+        <item>Google</item>
+        <item>DuckDuckGo</item>
+        <item>Qwant</item>
+        <item>Bing</item>
+        <item>Startpage</item>
+        <item>Ecosia</item>
+    </string-array>
+</resources>
